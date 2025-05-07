@@ -1,6 +1,3 @@
-# The code was generated for this provider version (it can be changed to your preference). 
-
-# The region is based on the first chosen resource (detected multiple regions). 
 terraform {
   required_providers {
     google = {
@@ -24,7 +21,7 @@ resource "google_compute_firewall" "acme-prod-firewall-3ee" {
   name          = "acme-prod-firewall"
   network       = "https://www.googleapis.com/compute/v1/projects/acme-gcp-prod/global/networks/acme-prod-vpc"
   project       = "acme-gcp-prod"
-  source_ranges = ["0.0.0.0/0"]
+  source_ranges = ["10.0.0.0/8"]
 }
 
 resource "google_compute_instance_group_manager" "acme-prod-e96" {
@@ -200,4 +197,3 @@ resource "google_compute_instance" "acme-prod-compute-7d5" {
   tags = ["http-server", "https-server"]
   zone = "us-central1-a"
 }
-
